@@ -34,3 +34,34 @@ class URI1047 {
         Console.WriteLine("O JOGO DUROU {0} HORA(S) E {1} MINUTO(S)", hr, min);
     }
 }
+
+
+
+//easy and understandable way:
+using System; 
+
+class URI1047 {
+
+    static void Main(string[] args) { 
+ 
+        int start_h = 0, start_m = 0, end_h = 0, end_m = 0;
+        int duration, hr, min;
+
+        string[] s = Console.ReadLine().Split(' ');
+
+        start_h = int.Parse(s[0]);
+        start_m = int.Parse(s[1]);
+        end_h = int.Parse(s[2]);
+        end_m = int.Parse(s[3]);
+        
+        duration = (end_h * 60 + end_m) - (start_h * 60 + start_m);
+        if(duration <= 0){
+            duration = duration + (60*24);
+        }
+        
+        hr = duration / 60;
+        min = duration % 60;
+        
+        Console.WriteLine("O JOGO DUROU {0} HORA(S) E {1} MINUTO(S)", hr, min);
+    }
+}
